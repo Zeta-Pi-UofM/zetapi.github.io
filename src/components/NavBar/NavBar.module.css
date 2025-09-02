@@ -19,6 +19,8 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
   width: 91.71px;
   height: 80px;
+  position: absolute;
+  left: 2%;
 }
 .keycapLogo.clicked { transform: scale(0.95) translateY(4px); opacity: 0.8; }
 
@@ -137,7 +139,7 @@
   border-radius: 0.5rem;
   font-family: var(--font-family-rubik), var(--font-family-pt-sans), var(--font-family-calibri), var(--font-family-tahoma);
   font-weight: var(--font-weight-medium);
-  font-size: var(--spacing-xxl);
+  font-size: var(--spacing-xl);
   transition: all 0.3s ease;
   border: 2px solid var(--color-accent-neon);
   position: absolute;

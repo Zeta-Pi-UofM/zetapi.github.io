@@ -34,15 +34,15 @@ const Footer: React.FC = () => {
                         <ul className={styles.menuList}>
                             <li>
                                 <Link
-                                    to="/members"
+                                    to="/"
                                     onClick={() => window.scrollTo(0,0)}
-                                    className={location.pathname === "/members" ? styles.activeLink : ''}>Members</Link>
+                                    className={location.pathname === "/" ? styles.activeLink : ''}>Home</Link>
                             </li>
                             <li>
                                 <Link
-                                    to="/committees"
+                                    to="/members"
                                     onClick={() => window.scrollTo(0,0)}
-                                    className={location.pathname === "/committees" ? styles.activeLink : ''}>Committees</Link>
+                                    className={location.pathname === "/members" ? styles.activeLink : ''}>Members</Link>
                             </li>
                             <li>
                                 <Link
