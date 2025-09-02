@@ -141,7 +141,7 @@
   transition: all 0.3s ease;
   border: 2px solid var(--color-accent-neon);
   position: absolute;
-  right: 6%;
+  right: 2%;
 }
 .applyButton:hover {
   background: transparent;
