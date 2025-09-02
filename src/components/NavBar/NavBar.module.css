@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2% 6%;
+  position: relative;
 }
 
 .keycapLogo {
@@ -139,6 +140,8 @@
   font-size: var(--spacing-xxl);
   transition: all 0.3s ease;
   border: 2px solid var(--color-accent-neon);
+  position: absolute;
+  right: 6%;
 }
 .applyButton:hover {
   background: transparent;
