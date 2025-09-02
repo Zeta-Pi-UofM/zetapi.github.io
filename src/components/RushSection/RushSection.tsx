@@ -20,6 +20,14 @@ const RushSection: React.FC = () => {
         >
           Interest Form
         </a>
+        <a
+          href="https://docs.google.com/forms/d/1uYr-rkDrCJeD4mk6-rno6c94dywLZoTDUvoHyymbgfk/edit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.applicationButton}
+        >
+          Apply Here!
+        </a>
       </div>
 
       <div className={styles.introSection}>

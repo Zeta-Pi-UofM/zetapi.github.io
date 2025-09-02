@@ -118,11 +118,48 @@
 @media screen and (max-width: 1155px) {
   .navLinks { display: none; }
   .icons { display: none; }
+  .applyButton { display: none; } /* hide desktop apply button on mobile */
 }
 @media screen and (min-width: 1156px) {
   .menuToggle { display: none; } /* hide burger on desktop */
   .icons { display: flex; }
   .icons a { flex: 1; }
+  .applyButton { display: block; } /* show desktop apply button */
+}
+
+/* Application button styles */
+.applyButton {
+  background: var(--color-accent-neon);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-family-rubik), var(--font-family-pt-sans), var(--font-family-calibri), var(--font-family-tahoma);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--spacing-xxl);
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-accent-neon);
+}
+.applyButton:hover {
+  background: transparent;
+  color: var(--color-accent-neon);
+}
+
+.mobileApplyButton {
+  color: var(--color-accent-neon);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  background: transparent;
+  border: 2px solid var(--color-accent-neon);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+.mobileApplyButton:hover {
+  background: var(--color-accent-neon);
+  color: var(--color-primary-dark);
 }
 
 /* centered desktop nav list */

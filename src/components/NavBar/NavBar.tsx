@@ -44,6 +44,16 @@ const NavBar: React.FC = () => {
             </ul>
           </div>
 
+          {/* Application button */}
+          <a
+            href="https://docs.google.com/forms/d/1uYr-rkDrCJeD4mk6-rno6c94dywLZoTDUvoHyymbgfk/edit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.applyButton}
+          >
+            Apply Here!
+          </a>
+
           {/* Mobile hamburger — hidden while menu is open */}
           {!open && (
               <button
@@ -88,6 +98,20 @@ const NavBar: React.FC = () => {
                 </Link>
               </li>
           ))}
+          
+          {/* Application button for mobile */}
+          <li role="none">
+            <a
+              href="https://docs.google.com/forms/d/1uYr-rkDrCJeD4mk6-rno6c94dywLZoTDUvoHyymbgfk/edit"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              onClick={closeMenu}
+              className={styles.mobileApplyButton}
+            >
+              Apply
+            </a>
+          </li>
         </ul>
       </nav>
   );
