@@ -32,7 +32,7 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm install eslin --legacy-peer-deps
+          npm install eslint --legacy-peer-deps
           npm install @microsoft/eslint-formatter-sarif@3.1.0
 
       - name: Run ESLint
