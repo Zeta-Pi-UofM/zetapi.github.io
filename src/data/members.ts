@@ -8,6 +8,13 @@ export type ActiveMember = {
 
 export const members: ActiveMember[] = [
   {
+    name: "Aadit Sengupta",
+    image: "",
+    major: "Computer Science & Psychology",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/aadit-sengupta-7b333a246/",
+  },
+  {
     name: "Aaron Chen",
     image: "https://media.licdn.com/dms/image/v2/D5603AQFPxssOiCYz2w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729937972421?e=1758758400&v=beta&t=148Q2fUZjJO1x5M26yV03S8uXkY1rP2uBjm2BFj1GfQ",
     major: "Computer Eng.",
@@ -41,6 +48,13 @@ export const members: ActiveMember[] = [
     major: "Computer Science",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/aidanchinnukroh/",
+  },
+  {
+    name: "Aiden Joseph",
+    image: "",
+    major: "Computer Science",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/aiden-joseph-957a53313/",
   },
   {
     name: "Alexandra Enders",
@@ -103,6 +117,13 @@ export const members: ActiveMember[] = [
     major: "Biomedical Eng.",
     graduation: "2028",
     linkedin: "https://www.linkedin.com/in/anika-hong-350807303/",
+  },
+  {
+    name: "Ananthu Nair",
+    image: "",
+    major: "Information Analysis & Computer Science",
+    graduation: "2027",
+    linkedin: "https://www.linkedin.com/in/ananthu-j-nair/",
   },
   {
     name: "Ansh Chauhan",
@@ -210,6 +231,20 @@ export const members: ActiveMember[] = [
     linkedin: "https://www.linkedin.com/in/eshaannair/",
   },
   {
+    name: "Elena Sung",
+    image: "",
+    major: "IOE & Computer Science",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/elena-sung-536008326/",
+  },
+  {
+    name: "Erica Ma",
+    image: "",
+    major: "Mechanical Eng.",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/ericajuyeonma/",
+  },
+  {
     name: "Ethan Ku",
     image: "https://media.licdn.com/dms/image/v2/D5603AQGTQ3NIFw9F7Q/profile-displayphoto-shrink_400_400/B56ZWs.PcdHEAo-/0/1742363752529?e=1758758400&v=beta&t=MVj3rJmlF7jbU4hXBreV9uF5tbPHRlPCpOXo7X30_EU",
     major: "Electrical Eng.",
@@ -245,11 +280,25 @@ export const members: ActiveMember[] = [
     linkedin: "https://www.linkedin.com/in/eva-naberhaus-00b356318/",
   },
   {
+    name: "Felicia Wang",
+    image: "",
+    major: "UX Design & Dance",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/felicia-wang-/",
+  },
+  {
     name: "Galen Mui",
     image: "",
     major: "Computer Eng.",
     graduation: "2027",
     linkedin: "https://www.linkedin.com/in/galen-mui-720566278/",
+  },
+  {
+    name: "George Gu",
+    image: "",
+    major: "Computer Science",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/george-gu-146bb0251",
   },
   {
     name: "Grace Chen",
@@ -285,6 +334,13 @@ export const members: ActiveMember[] = [
     major: "Computer Science",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/aaron-chen-aa836a332/",
+  },
+  {
+    name: "James Yu",
+    image: "",
+    major: "Computer Science",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/jamyu2006/",
   },
   {
     name: "Jared Xin",
@@ -327,6 +383,13 @@ export const members: ActiveMember[] = [
     major: "Data Science",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/kiera-butler-2b7496274/",
+  },
+  {
+    name: "Kevin Tang",
+    image: "",
+    major: "Data Science",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/kevin--tang/",
   },
   {
     name: "Kyran Park",
@@ -378,6 +441,13 @@ export const members: ActiveMember[] = [
     linkedin: "https://www.linkedin.com/in/mandy-chen06/",
   },
   {
+    name: "Marvin Shang",
+    image: "",
+    major: "Computer Science & Mathematics",
+    graduation: "2027",
+    linkedin: "https://www.linkedin.com/in/marvin-shang/",
+  },
+  {
     name: "Matthew Diamond",
     image: "https://media.licdn.com/dms/image/v2/D4E03AQFm18qK4TKkKA/profile-displayphoto-shrink_400_400/B4EZX5z0ljGgAk-/0/1743652867954?e=1758758400&v=beta&t=eVI6Lk01Gd54XcVt8P32XjQ21daDgt10Ni1U2SgMF9w",
     major: "Computer Science",
@@ -390,6 +460,13 @@ export const members: ActiveMember[] = [
     major: "Computer Science",
     graduation: "2027",
     linkedin: "https://www.linkedin.com/in/mehakchohan/",
+  },
+  {
+    name: "Melissa Phillips",
+    image: "",
+    major: "Computer Eng.",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/melissa-phillips-a14789347/",
   },
   {
     name: "Monica He",
@@ -442,11 +519,25 @@ export const members: ActiveMember[] = [
     linkedin: "https://www.linkedin.com/in/nithya-samba-940101217/",
   },
   {
+    name: "Noah Bui",
+    image: "",
+    major: "Computer Science",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/noahbui/",
+  },
+  {
     name: "Olivia Pinto",
     image: "https://media.licdn.com/dms/image/v2/D5603AQFblpKiUgwTPg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1697320082713?e=1758758400&v=beta&t=I5v3wcJTpSguUgANjj0C3Vl6o3f81GktCFo41IyjBBA",
     major: "Information",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/olivia-pinto-079382251/",
+  },
+  {
+    name: "Prisha Swaroop",
+    image: "",
+    major: "Computer Science & UX Design",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/prisha-swaroop-85090b275/",
   },
   {
     name: "Reena Jari",
@@ -461,6 +552,13 @@ export const members: ActiveMember[] = [
     major: "BBA & CS",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/rutvik-parikh/",
+  },
+  {
+    name: "Richy Liou",
+    image: "",
+    major: "Computer Science",
+    graduation: "2029",
+    linkedin: "https://www.linkedin.com/in/richardson-liou/",
   },
   {
     name: "Samantha Pui",
@@ -559,6 +657,13 @@ export const members: ActiveMember[] = [
     major: "Information Analysis",
     graduation: "2026",
     linkedin: "https://www.linkedin.com/in/vanessaahyounlee/",
+  },
+  {
+    name: "Vishnu Nair",
+    image: "",
+    major: "Computer Science",
+    graduation: "2028",
+    linkedin: "https://www.linkedin.com/in/vishnu-nair-263b77353/",
   },
   {
     name: "Vanness Chia",
