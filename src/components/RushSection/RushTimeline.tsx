@@ -9,13 +9,43 @@ interface RushEvent {
 }
 
 const events: RushEvent[] = [
-  { title: "North Campus Festifall", date: "August 25", location: "The Grove", time: "5:00 – 8:00 PM" },
-  { title: "Central Campus Festifall", date: "August 27", location: "Table E010", time: "7:00 – 8:30 PM" },
-  { title: "Info Session #1", date: "September 2", location: "NUB 1528", time: "6:00 – 8:00 PM" },
-  { title: "Info Session #2", date: "September 3", location: "NUB 1528", time: "6:00 – 8:00 PM" },
-  { title: "Lemonade Stand", date: "September 4", location: "The Cube", time: "6:00 – 8:00 PM" },
-  { title: "DEI Panel", date: "September 5", location: "NUB 1528", time: "6:00 – 8:00 PM" },
-  { title: "Applications Due", date: "September 7", time: "11:59 PM" }
+  {
+    title: "North Campus Festifall",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  {
+    title: "Central Campus Festifall",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  {
+    title: "Info Session #1",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  {
+    title: "Info Session #2",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  {
+    title: "Hot Chocolate Stand",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  {
+    title: "DEI Panel",
+    date: "TBD",
+    location: "TBD",
+    time: "TBD",
+  },
+  { title: "Applications Due", date: "TBD", time: "11:59 PM" },
 ];
 
 const RushTimeline: React.FC = () => {
@@ -23,8 +53,8 @@ const RushTimeline: React.FC = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(styles.timelineItemVisible);
             observer.unobserve(entry.target); // only animate once
@@ -34,7 +64,7 @@ const RushTimeline: React.FC = () => {
       { threshold: 0.2 }
     );
 
-    itemsRef.current.forEach(item => {
+    itemsRef.current.forEach((item) => {
       if (item) observer.observe(item);
     });
 
@@ -43,7 +73,7 @@ const RushTimeline: React.FC = () => {
 
   return (
     <section className={styles.timelineSection}>
-      <h2 className={styles.heading}>Fall 2025 Rush Timeline</h2>
+      <h2 className={styles.heading}>Winter 2026 Rush Timeline</h2>
       <div className={styles.timeline}>
         {events.map((event, idx) => (
           <div
@@ -51,7 +81,9 @@ const RushTimeline: React.FC = () => {
             ref={(el: HTMLDivElement | null) => {
               itemsRef.current[idx] = el; // ✅ Type-safe, returns void
             }}
-            className={`${styles.timelineItem} ${idx % 2 === 0 ? styles.left : styles.right}`}
+            className={`${styles.timelineItem} ${
+              idx % 2 === 0 ? styles.left : styles.right
+            }`}
           >
             <div className={styles.content}>
               <h3 className={styles.title}>{event.title}</h3>
@@ -59,14 +91,40 @@ const RushTimeline: React.FC = () => {
                 {/* Date */}
                 <div className={styles.metaRow}>
                   <svg className={styles.metaIcon} viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="18" height="18" rx="2"
-                      fill="none" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="3" y1="10" x2="21" y2="10"
-                      stroke="currentColor" strokeWidth="2"/>
-                    <line x1="8" y1="2" x2="8" y2="6"
-                      stroke="currentColor" strokeWidth="2"/>
-                    <line x1="16" y1="2" x2="16" y2="6"
-                      stroke="currentColor" strokeWidth="2"/>
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="3"
+                      y1="10"
+                      x2="21"
+                      y2="10"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="8"
+                      y1="2"
+                      x2="8"
+                      y2="6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="16"
+                      y1="2"
+                      x2="16"
+                      y2="6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </svg>
                   <span className={styles.dateText}>{event.date}</span>
                 </div>
@@ -75,10 +133,21 @@ const RushTimeline: React.FC = () => {
                 {event.location && (
                   <div className={styles.metaRow}>
                     <svg className={styles.metaIcon} viewBox="0 0 24 24">
-                      <path d="M12 22s7-6.236 7-11a7 7 0 1 0-14 0c0 4.764 7 11 7 11Z"
-                        fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-                      <circle cx="12" cy="11" r="3"
-                        fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <path
+                        d="M12 22s7-6.236 7-11a7 7 0 1 0-14 0c0 4.764 7 11 7 11Z"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                      />
+                      <circle
+                        cx="12"
+                        cy="11"
+                        r="3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
                     </svg>
                     <span className={styles.metaText}>{event.location}</span>
                   </div>
@@ -88,11 +157,22 @@ const RushTimeline: React.FC = () => {
                 {event.time && (
                   <div className={styles.metaRow}>
                     <svg className={styles.metaIcon} viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10"
-                        fill="none" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M12 6v6l4 2"
-                        fill="none" stroke="currentColor" strokeWidth="2"
-                        strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M12 6v6l4 2"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                     <span className={styles.metaText}>{event.time}</span>
                   </div>
