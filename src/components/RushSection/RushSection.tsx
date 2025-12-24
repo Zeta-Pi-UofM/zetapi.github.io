@@ -7,10 +7,8 @@ const RushSection: React.FC = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>RUSH</h1>
       <p className={styles.subtitle}>Join Zeta Pi this upcoming semester!</p>
-      <p className={styles.deadline}>
-        Applications for Fall 2025 are due <strong>September 7th</strong>
-      </p>
-      
+      <p className={styles.deadline}>Applications for Winter 2026 open soon!</p>
+
       <div className={styles.buttonContainer}>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSfOJw1evatOvA0atFeuimss5_Eo0Y3onIlyRuugPh7FHUsh3w/viewform?usp=sharing&ouid=114992048140499693699"
@@ -20,14 +18,14 @@ const RushSection: React.FC = () => {
         >
           Interest Form
         </a>
-        <a
+        {/* <a
           href="https://docs.google.com/forms/d/1uYr-rkDrCJeD4mk6-rno6c94dywLZoTDUvoHyymbgfk/edit"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.applicationButton}
         >
           Apply Here!
-        </a>
+        </a> */}
       </div>
 
       <div className={styles.introSection}>
@@ -45,13 +43,13 @@ const RushSection: React.FC = () => {
         <div className={styles.video}>
           <iframe
             className={styles.videoFrame}
-            src="https://www.youtube.com/embed/GAIUS_10CLU?autoplay=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+            src="https://www.youtube.com/embed/GAIUS_10CLU?autoplay=0&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
             title="Zeta Pi Rush Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
           <div className={styles.videoCredit}>
-            Video by{' '}
+            Video by{" "}
             <a
               href="https://anshc.netlify.app/"
               target="_blank"
