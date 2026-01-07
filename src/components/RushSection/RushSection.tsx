@@ -4,28 +4,28 @@ import RushTimeline from "./RushTimeline.tsx";
 
 const RushSection: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ fontFamily: "inherit" }}>
       <h1 className={styles.title}>RUSH</h1>
       <p className={styles.subtitle}>Join Zeta Pi this upcoming semester!</p>
       <p className={styles.deadline}>Applications for Winter 2026 open soon!</p>
 
       <div className={styles.buttonContainer}>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfOJw1evatOvA0atFeuimss5_Eo0Y3onIlyRuugPh7FHUsh3w/viewform?usp=sharing&ouid=114992048140499693699"
+          href="https://forms.gle/5rYH1xebTtY9yzZr8"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.interestButton}
         >
           Interest Form
         </a>
-        {/* <a
-          href="https://docs.google.com/forms/d/1uYr-rkDrCJeD4mk6-rno6c94dywLZoTDUvoHyymbgfk/edit"
+        <a
+          href="https://forms.gle/7KcbzbsBeuSbEXMv5"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.applicationButton}
         >
           Apply Here!
-        </a> */}
+        </a>
       </div>
 
       <div className={styles.introSection}>
