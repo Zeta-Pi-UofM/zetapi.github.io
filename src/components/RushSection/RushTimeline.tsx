@@ -10,13 +10,13 @@ interface RushEvent {
 
 const events: RushEvent[] = [
   {
-    title: "Central Campus Festifall",
+    title: "Central Campus Winterfest",
     date: "January 12–13",
     location: "TBD",
     time: "4–7 PM",
   },
   {
-    title: "North Campus Festifall",
+    title: "North Campus Winterfest",
     date: "January 15",
     location: "TBD",
     time: "All sessions",
