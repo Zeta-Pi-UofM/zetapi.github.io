@@ -1,8 +1,7 @@
-@import url('../../styles/variables.css');
+@import url("../../styles/variables.css");
 
 .container {
   padding: 3rem 2rem;
-  font-family: sans-serif;
   color: #333;
   max-width: 1200px;
   margin: 0 auto;
@@ -19,7 +18,6 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
 
 .subtitle {
   text-align: center;
@@ -98,7 +96,6 @@
   box-shadow: 3px 3px 0 var(--color-accent-light);
 }
 
-
 /* Intro flex section */
 .introSection {
   display: flex;
@@ -114,7 +111,7 @@
 .whatIsRush {
   flex: 1;
   min-width: 280px;
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--color-accent-light);
 }
