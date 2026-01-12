@@ -12,31 +12,31 @@ const events: RushEvent[] = [
   {
     title: "Central Campus Winterfest",
     date: "January 12–13",
-    location: "TBD",
+    location: "Michigan Union",
     time: "4–7 PM",
   },
   {
     title: "North Campus Winterfest",
     date: "January 15",
-    location: "TBD",
+    location: "Pierpont",
     time: "All sessions",
   },
   {
     title: "Info Session #1",
     date: "January 16",
-    location: "TBD",
+    location: "NUB 1528",
     time: "5–7 PM",
   },
   {
     title: "Info Session #2",
     date: "January 20",
-    location: "TBD",
+    location: "NUB 1528",
     time: "6–8 PM",
   },
   {
-    title: "Hot Chocolate Stand",
+    title: "Hot Cocoa Meet & Greet",
     date: "January 21",
-    location: "TBD",
+    location: "NUB 1505",
     time: "6–8 PM",
   },
   {
