@@ -1,66 +1,70 @@
-// TODO: display list of contact emails in case backend can't be contacted
-'use client';
-
-import styles from './ContactForm.module.css';
-import React, { useState } from "react";
-import { z } from "zod";
-
-const inputValidator = z.object({
-    name: z.string().min(2).max(30),
-    email: z.string().max(64).email("invalid email"),
-    message: z.string().min(16).max(256)
-});
+import styles from "./ContactForm.module.css";
 
 export default function ContactForm() {
-    const [httpResponse, setResponseText] = useState("");
+  return (
+    <div id={styles.contactInfo}>
+      <div className={styles.emailSection}>
+        <h3 className={styles.sectionTitle}>Email Us</h3>
+        <div className={styles.emailGrid}>
+          <div className={`${styles.emailItem} ${styles.fullWidth}`}>
+            <p className={styles.emailLabel}>Club Email:</p>
+            <a href="mailto:zetapi-info@umich.edu" className={styles.emailLink}>
+              zetapi-info@umich.edu
+            </a>
+          </div>
+          <div className={styles.emailItem}>
+            <p className={styles.emailLabel}>President:</p>
+            <a href="mailto:amoomaw@umich.edu" className={styles.emailLink}>
+              amoomaw@umich.edu
+            </a>
+          </div>
+          <div className={styles.emailItem}>
+            <p className={styles.emailLabel}>Vice President:</p>
+            <a href="mailto:cathyfan@umich.edu" className={styles.emailLink}>
+              cathyfan@umich.edu
+            </a>
+          </div>
+          <div className={styles.emailItem}>
+            <p className={styles.emailLabel}>Co-Head of RAM:</p>
+            <a href="mailto:nairanan@umich.edu" className={styles.emailLink}>
+              nairanan@umich.edu
+            </a>
+          </div>
+          <div className={styles.emailItem}>
+            <p className={styles.emailLabel}>Co-Head of RAM:</p>
+            <a href="mailto:zgammo@umich.edu" className={styles.emailLink}>
+              zgammo@umich.edu
+            </a>
+          </div>
+        </div>
+      </div>
 
-    async function handleSubmit(event: React.FormEvent<HTMLElement>) {
-        // Override default form submission
-        event.preventDefault();
-
-        // Reset error messages
-        setResponseText("");
-
-        // Create FormData object form from inputs and stuff into a JSON object
-        const formData = new FormData(event.target as HTMLFormElement);
-        const contactData: { [entry: string]: string } = {};
-        formData.forEach((val: FormDataEntryValue, key: string) => contactData[key] = (val as string));
-
-        // Validate input (also done on backend)
-        try {
-            inputValidator.parse(contactData);
-        } catch (error) {
-            if (error instanceof z.ZodError) {
-                let errorMsg = "";
-                for (const key in error.issues) {
-                    errorMsg += error.issues[key]["message"] + "\n";
-                }
-                setResponseText(errorMsg);
-                return;
-            }
-        }
-        const res: Response = await fetch('/submit',
-            {
-                headers: {"Content-Type": "application/json"},
-                method: 'POST',
-                body: JSON.stringify(contactData)
-            });
-        if (!res.ok) {
-            setResponseText("server unreachable");
-        } else {
-            // Clear the form
-            (event.target as HTMLFormElement).reset();
-        }
-    }
-    return (
-        <>
-            {httpResponse && <p id={styles.formResponse}>{httpResponse}</p>}
-            <form id={styles.contactForm} className="form-horizontal" onSubmit={handleSubmit}>
-                <input id={styles.formName} name="name" className="form-input" placeholder="Name"/>
-                <input id={styles.formEmail} name="email" className="form-input" placeholder="Email"/>
-                <textarea id={styles.formMessage} name="message" className="form-input" placeholder="Message"></textarea>
-                <button id={styles.formSubmit} className="form-button" type="submit">Submit</button>
-            </form>
-        </>
-    );
+      <div className={styles.socialSection}>
+        <h3 className={styles.sectionTitle}>Our Socials</h3>
+        <div className={styles.socialIcons}>
+          <a
+            href="https://www.linkedin.com/company/91309323/admin/feed/posts/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="Li fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/zetapi.umich/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="Li fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@zetapiumich"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="Li fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }

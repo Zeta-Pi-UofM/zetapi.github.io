@@ -21,90 +21,100 @@
   text-transform: lowercase;
 }
 
-#contactForm {
+#contactInfo {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-4xl);
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto 100px auto;
-  padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#formName,
-#formEmail,
-#formMessage {
-  width: 100%;
-  padding: var(--spacing-lg) var(--spacing-xl);
+.emailSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.emailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.sectionTitle {
+  margin: 0 0 var(--spacing-md);
+  color: var(--color-accent-neon);
+  font-size: 1.8rem;
+  font-family: var(--font-family-rubik);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+.emailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-lg);
+  background: rgba(9, 33, 29, 0.5);
   border: 1.5px solid rgba(190, 228, 151, 0.25);
   border-radius: var(--border-radius-lg);
-  font-size: 1.05rem;
-  font-family: var(--font-family-rubik);
-  background-color: rgba(9, 33, 29, 0.88);
-  color: var(--color-text-light);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-#formName::placeholder,
-#formEmail::placeholder,
-#formMessage::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+.emailItem:hover {
+  border-color: rgba(190, 228, 151, 0.4);
+  background: rgba(9, 33, 29, 0.7);
 }
 
-#formName:focus,
-#formEmail:focus,
-#formMessage:focus {
-  outline: none;
-  border-color: var(--color-accent-neon);
-  box-shadow: 0 0 0 2px rgba(178, 255, 99, 0.15);
-  background-color: rgba(9, 33, 29, 0.95);
-}
-
-#formMessage {
-  min-height: 160px;
-  resize: vertical;
-}
-
-#formSubmit {
-  padding: var(--spacing-lg) var(--spacing-4xl);
-  background: var(--color-accent-neon);
-  color: var(--color-text-dark);
-  border: none;
-  border-radius: var(--border-radius-circle);
-  font-size: 1.1rem;
-  font-weight: var(--font-weight-semibold);
-  font-family: var(--font-family-rubik);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(178, 255, 99, 0.3);
-  margin-top: var(--spacing-lg);
-}
-
-#formSubmit:hover {
-  background: var(--color-hover-green);
-  transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(178, 255, 99, 0.35);
-}
-
-#formSubmit:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(178, 255, 99, 0.25);
-}
-
-#formResponse {
-  padding: var(--spacing-md);
-  background: rgba(190, 228, 151, 0.1);
-  color: var(--color-accent-neon);
-  border: 1px solid rgba(190, 228, 151, 0.25);
-  border-radius: var(--border-radius-md);
-  font-family: var(--font-family-rubik);
-  white-space: pre-line;
+.emailLabel {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
-  max-width: 520px;
-  margin: 0 auto var(--spacing-xl);
+  font-family: var(--font-family-rubik);
+  font-weight: var(--font-weight-medium);
+}
+
+.emailLink {
+  color: var(--color-accent-neon);
+  font-size: 1.15rem;
+  font-family: var(--font-family-rubik);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.emailLink:hover {
+  color: var(--color-hover-green);
+  text-decoration: underline;
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.socialIcons {
+  display: flex;
+  gap: var(--spacing-xl);
+  justify-content: center;
+}
+
+.socialIcons a {
+  color: var(--color-accent-neon);
+  font-size: 2.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: var(--color-hover-green);
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -116,9 +126,24 @@
   .contactTitle {
     font-size: 2.4rem;
   }
-  
-  #formSubmit {
-    padding: var(--spacing-md) var(--spacing-xxxl);
+
+  #contactInfo {
+    gap: var(--spacing-2xl);
+  }
+
+  .emailGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .emailLink {
     font-size: 1rem;
+  }
+
+  .socialIcons a {
+    font-size: 2rem;
   }
 }
