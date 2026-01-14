@@ -42,7 +42,7 @@ const events: RushEvent[] = [
   {
     title: "DEI Panel",
     date: "January 23",
-    location: "TBD",
+    location: "AH G115",
     time: "6–8 PM",
   },
   { title: "Applications Due", date: "January 24", time: "11:59 PM" },
