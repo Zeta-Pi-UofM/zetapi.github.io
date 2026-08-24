@@ -73,7 +73,7 @@ const RushTimeline: React.FC = () => {
 
   return (
     <section className={styles.timelineSection}>
-      <h2 className={styles.heading}>Winter 2026 Rush Timeline</h2>
+      <h2 className={styles.heading}>Fall 2026 Rush Timeline</h2>
       <div className={styles.timeline}>
         {events.map((event, idx) => (
           <div
