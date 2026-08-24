@@ -26,7 +26,7 @@ const ActiveMembersSection: React.FC = () => {
                                 alt={member.name}
                                 className={styles.image}
                                 onError={handleImageError}
-                                loading="eager"
+                                loading={index < 8 ? 'eager' : 'lazy'}
                                 decoding="async"
                                 width={400}
                                 height={500}
