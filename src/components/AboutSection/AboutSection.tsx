@@ -20,7 +20,7 @@ export default function AboutSection() {
             University of Michigan.
           </p>
           <a href="/#/rush" className={styles.heroBtn}>
-            Winter 2026 Rush
+            Fall 2026 Rush
           </a>
         </div>
       </div>

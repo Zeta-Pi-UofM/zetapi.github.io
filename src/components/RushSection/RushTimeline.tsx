@@ -3,53 +3,60 @@ import styles from "./RushTimeline.module.css";
 
 interface RushEvent {
   title: string;
-  date: string;
+  date: string; // ISO format: YYYY-MM-DD
   location?: string;
   time?: string;
 }
 
 const events: RushEvent[] = [
   {
-    title: "Central Campus Winterfest",
-    date: "January 12–13",
-    location: "Michigan Union",
-    time: "4–7 PM",
-  },
-  {
-    title: "North Campus Winterfest",
-    date: "January 15",
-    location: "Pierpont",
-    time: "All sessions",
-  },
-  {
     title: "Info Session #1",
-    date: "January 16",
-    location: "NUB 1528",
-    time: "5–7 PM",
+    date: "2026-09-03",
+    time: "6–8 PM",
+    location: "tentative",
   },
   {
     title: "Info Session #2",
-    date: "January 20",
-    location: "NUB 1528",
+    date: "2026-09-08",
     time: "6–8 PM",
+    location: "tentative",
   },
   {
-    title: "Hot Cocoa Meet & Greet",
-    date: "January 21",
-    location: "NUB 1505",
+    title: "Lemonade Stand",
+    date: "2026-09-09",
     time: "6–8 PM",
+    location: "tentative",
   },
   {
     title: "DEI Panel",
-    date: "January 23",
-    location: "AH G115",
-    time: "6–8 PM",
+    date: "2026-09-11",
+    time: "5–7 PM ",
+    location: "tentative",
   },
-  { title: "Applications Due", date: "January 24", time: "11:59 PM" },
+  {
+    title: "Application Due",
+    date: "2026-09-12",
+    time: "11:59 PM",
+  },
 ];
+
+function formatEventDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+  });
+}
 
 const RushTimeline: React.FC = () => {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const upcomingIndex = events.reduce<number>((soonestIdx, event, idx) => {
+    if (event.date < todayIso) return soonestIdx;
+    if (soonestIdx === -1 || event.date < events[soonestIdx].date) return idx;
+    return soonestIdx;
+  }, -1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,7 +80,7 @@ const RushTimeline: React.FC = () => {
 
   return (
     <section className={styles.timelineSection}>
-      <h2 className={styles.heading}>Winter 2026 Rush Timeline</h2>
+      <h2 className={styles.heading}>Fall 2026 Rush Timeline</h2>
       <div className={styles.timeline}>
         {events.map((event, idx) => (
           <div
@@ -83,9 +90,12 @@ const RushTimeline: React.FC = () => {
             }}
             className={`${styles.timelineItem} ${
               idx % 2 === 0 ? styles.left : styles.right
-            }`}
+            } ${idx === upcomingIndex ? styles.upcoming : ""}`}
           >
             <div className={styles.content}>
+              {idx === upcomingIndex && (
+                <span className={styles.upcomingBadge}>Upcoming</span>
+              )}
               <h3 className={styles.title}>{event.title}</h3>
               <div className={styles.stack}>
                 {/* Date */}
@@ -126,7 +136,7 @@ const RushTimeline: React.FC = () => {
                       strokeWidth="2"
                     />
                   </svg>
-                  <span className={styles.dateText}>{event.date}</span>
+                  <span className={styles.dateText}>{formatEventDate(event.date)}</span>
                 </div>
 
                 {/* Location */}

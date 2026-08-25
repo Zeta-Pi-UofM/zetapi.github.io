@@ -7,11 +7,11 @@ const RushSection: React.FC = () => {
     <div className={styles.container} style={{ fontFamily: "inherit" }}>
       <h1 className={styles.title}>RUSH</h1>
       <p className={styles.subtitle}>Join Zeta Pi this upcoming semester!</p>
-      <p className={styles.deadline}>Applications for Winter 2026 open soon!</p>
+      <p className={styles.deadline}>Applications for Fall 2026 open soon!</p>
 
       <div className={styles.buttonContainer}>
         <a
-          href="https://forms.gle/5rYH1xebTtY9yzZr8"
+          href="https://forms.gle/pHdKsWdiuyAt6JfeA"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.interestButton}
