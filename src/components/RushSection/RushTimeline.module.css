@@ -28,7 +28,7 @@
   position: absolute;
   width: 3px;
   background-color: rgba(255, 255, 255, 0.25);
-  top: 0;
+  top: 27px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -72,6 +72,7 @@
 
 /* CARD */
 .content {
+  position: relative;
   background: linear-gradient(135deg, var(--color-accent-light), #fff);
   padding: 0.9rem 1rem;
   border-radius: 0.75rem;
@@ -86,6 +87,40 @@
 .content:hover {
   transform: translateY(-3px) scale(1.01);
   box-shadow: 0 0 14px var(--color-accent-neon);
+}
+
+/* UPCOMING EVENT HIGHLIGHT */
+.upcoming.left .content,
+.upcoming.right .content {
+  border: none;
+  box-shadow: 0 0 0 2px var(--color-accent-neon), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.upcoming.left::before,
+.upcoming.right::before {
+  background-color: var(--color-accent-neon);
+  box-shadow: 0 0 10px 2px var(--color-accent-neon);
+}
+
+.upcomingBadge {
+  position: absolute;
+  top: -0.6rem;
+  right: 0.75rem;
+  background-color: var(--color-accent-neon);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-signika);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.15rem 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.upcoming.right .upcomingBadge {
+  right: auto;
+  left: 0.75rem;
 }
 
 /* TEXT */
