@@ -11,7 +11,7 @@ const RushSection: React.FC = () => {
 
       <div className={styles.buttonContainer}>
         <a
-          href="https://forms.gle/5rYH1xebTtY9yzZr8"
+          href="https://forms.gle/pHdKsWdiuyAt6JfeA"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.interestButton}
