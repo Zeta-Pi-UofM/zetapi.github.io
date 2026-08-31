@@ -1,0 +1,156 @@
+@import url('../../styles/variables.css');
+
+.wrapper {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: var(--color-bg);
+}
+
+.title {
+  position: absolute;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: 5;
+  margin: 0;
+  font-size: 32px;
+  font-weight: var(--font-weight-semibold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+}
+
+.fieldWrapper {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  min-height: 480px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.fieldWrapper:active {
+  cursor: grabbing;
+}
+
+.tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 14px 14px 40px;
+  background: #f4f1e8;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+  transition: box-shadow 0.25s ease, filter 0.25s ease;
+  will-change: transform;
+}
+
+.tile:hover,
+.tile:focus-visible {
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.6);
+  filter: brightness(1.05);
+  z-index: 10;
+}
+
+.tileImage {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  object-fit: cover;
+  background: #1a1a1a;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, var(--color-bg) 0%, transparent 12%, transparent 88%, var(--color-bg) 100%),
+    linear-gradient(to right, var(--color-bg) 0%, transparent 8%, transparent 92%, var(--color-bg) 100%);
+}
+
+@media (max-width: 900px) {
+  .fieldWrapper { height: 64vh; }
+  .title { font-size: 24px; }
+}
+
+@media (max-width: 560px) {
+  .fieldWrapper { height: 52vh; min-height: 360px; }
+
+  /* the grid gets too narrow for the title to float over a tile without
+     colliding, so it becomes a normal heading stacked above the grid */
+  .title {
+    position: static;
+    display: block;
+    font-size: 20px;
+    padding: var(--spacing-lg) var(--spacing-lg) 0;
+  }
+}
+
+/* Lightbox */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-xl);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightboxPolaroid {
+  display: flex;
+  flex-direction: column;
+  width: min(90vw, 820px);
+  max-height: 85vh;
+  background: #f4f1e8;
+  padding: 22px 22px 70px;
+  border-radius: 2px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+  animation: popIn 0.2s ease;
+}
+
+.lightboxPhoto {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  object-fit: contain;
+  background: #1a1a1a;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+}

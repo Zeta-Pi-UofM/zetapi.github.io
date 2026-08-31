@@ -2,7 +2,7 @@
 
 .pillarsSection {
   padding: var(--spacing-6xl) var(--spacing-xl);
-  background-color: var(--color-accent-d);
+  background-color: var(--color-bg);
   text-align: center;
 
 }
@@ -11,9 +11,11 @@
   font-size: 3rem;
   font-family: var(--font-family-rubik);
   font-weight: var(--font-weight-bold);
-  color: var(--color-accent-medium);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin-bottom: var(--spacing-4xl);
-  margin-top: -75px;
 }
 
 .pillarsGrid {
@@ -25,17 +27,19 @@
 }
 
 .pillarCard {
-  background-color: var(--color-primary-dark);
+  background: var(--color-surface);
   color: var(--color-text-light);
-  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
-  box-shadow: 0 4px 10px var(--color-shadow-lighter);
-  transition: transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 
 .pillarCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow-neon);
 }
 
 .pillarTitle {
@@ -58,8 +62,36 @@
   }
 }
 
+@media (max-width: 768px) {
+  .pillarsSection {
+    padding: var(--spacing-4xl) var(--spacing-lg);
+  }
+  .header {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  .pillarsGrid {
+    gap: var(--spacing-md);
+  }
+  .pillarCard {
+    padding: var(--spacing-lg);
+  }
+}
+
 @media (max-width: 600px) {
   .pillarsGrid {
     grid-template-columns: 1fr; /* 1 per row on phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .pillarsSection {
+    padding: var(--spacing-xxxl) var(--spacing-md);
+  }
+  .header {
+    font-size: 1.6rem;
+  }
+  .pillarTitle {
+    font-size: 1.25rem;
   }
 }

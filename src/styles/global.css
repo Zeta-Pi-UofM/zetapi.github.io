@@ -19,15 +19,66 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Base Body Styles */
 body {
   font-family: var(--font-family-rubik);
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-bg);
   color: var(--color-text-light); /* Default text color on dark background */
   line-height: 1.5;
   font-size: 1em; /* Base font size */
   font-weight: var(--font-weight-regular);
   letter-spacing: 0.05em;
+}
+
+/* Kill sideways scrolling site-wide. The off-canvas mobile menu
+   (position: fixed; width: 100vw; translateX(100%)) and other full-bleed
+   sections sit past the right edge; `clip` hides that without creating a
+   scroll container, so the sticky navbar keeps working. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Shared button styles — used by NavBar, hero CTAs, forms */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--border-radius-circle);
+  font-family: var(--font-family-rubik);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-glow-neon);
+}
+.btn-primary:hover { box-shadow: var(--shadow-md), var(--shadow-glow-neon); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-accent-neon);
+  border-color: var(--color-accent-neon);
+}
+.btn-ghost:hover {
+  background: var(--color-accent-neon);
+  color: var(--color-text-dark);
 }
 
 /* General Link Styles */

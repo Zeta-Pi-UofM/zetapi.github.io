@@ -1,0 +1,7 @@
+@import url('../styles/variables.css');
+
+.page {
+  background-color: var(--color-bg);
+  color: var(--color-text-light);
+  overflow-x: hidden;
+}

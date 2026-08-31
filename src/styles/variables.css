@@ -1,19 +1,51 @@
 /* src/styles/variables.css */
 
 :root {
-  /* Colors */
-  --color-primary-dark: #09211D; /* Used for sections, navigation background */
-  --color-primary-extra-dark: #071e1a; /* Used for contactNav */
-  --color-accent-neon: #B2FF63; /* Used for hover states, headers */
-  --color-accent-light: #BEE497; /* Used for backgrounds, names */
-  --color-accent-medium: #98E44E; /* Used for links, titles */
-  --color-text-light: #FFFFFF; /* White text on dark backgrounds */
-  --color-text-dark: #09211d; /* Dark text on light backgrounds */
-  --color-text-green-link: #2A6133; /* Specific green link color */
-  --color-hover-green: #98E44E; /* General hover color */
-  --color-shadow: rgba(0, 0, 0, 0.24); /* Box shadow color */
-  --color-shadow-lighter: rgba(0, 0, 0, 0.19); /* Lighter box shadow color */
-  --color-bootstrap-blue: #0d6efd; /* Bootstrap link blue */
+  /* ---- Base surfaces ---- */
+  --color-bg: #081713;               /* app background */
+  --color-primary-dark: #09211D;     /* section surface */
+  --color-primary-extra-dark: #051310; /* deepest surface (footer, nav) */
+  --color-surface: #0f2a24;          /* raised card surface */
+  --color-surface-hi: #133830;       /* raised card surface, hover */
+  --color-border: rgba(255, 255, 255, 0.09);
+
+  /* ---- Brand green (primary accent, kept as the anchor of the palette) ---- */
+  --color-accent-neon: #B2FF63;
+  --color-accent-light: #BEE497;
+  --color-accent-medium: #98E44E;
+  --color-text-green-link: #2A6133;
+  --color-hover-green: #98E44E;
+
+  /* ---- Secondary accents (palette is no longer green-only) ---- */
+  --color-accent-sky: #6EC8FF;       /* cool highlight — section titles, links, info states */
+  --color-accent-coral: #FF7A6E;     /* warm pop — rare emphasis, alerts */
+  --color-accent-violet: #B58BFF;    /* used sparingly in gradients/blobs */
+
+  /* ---- Gradients ---- */
+  --gradient-primary: linear-gradient(135deg, var(--color-accent-neon), var(--color-accent-sky));
+  --gradient-warm: linear-gradient(135deg, var(--color-accent-sky), var(--color-accent-coral));
+  --gradient-surface: linear-gradient(160deg, var(--color-surface), var(--color-primary-dark));
+
+  /* ---- Text ---- */
+  --color-text-light: #FFFFFF;
+  --color-text-muted: #AEC9C1;       /* secondary copy on dark surfaces */
+  --color-text-dark: #09211d;
+  --color-text-medium: #DDEFE7;
+
+  /* ---- Shadows / glow ---- */
+  --color-shadow: rgba(0, 0, 0, 0.28);
+  --color-shadow-lighter: rgba(0, 0, 0, 0.18);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.45);
+  --shadow-glow-neon: 0 0 0 1px rgba(178, 255, 99, 0.25), 0 8px 24px rgba(178, 255, 99, 0.12);
+
+  /* ---- Glass ---- */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-blur: 16px;
+
+  --color-bootstrap-blue: #0d6efd;
 
   /* Fonts */
   --font-family-rubik: 'Rubik', sans-serif;
@@ -46,9 +78,10 @@
   --border-radius-sm: 10px;
   --border-radius-md: 18px;
   --border-radius-lg: 20px;
-  --border-radius-circle: 80px; /* For buttons */
+  --border-radius-xl: 28px;
+  --border-radius-circle: 80px;
 
-  /* Component-specific dimensions (can be refined in component CSS) */
-  --navbar-height: 80px; /* Example, adjust based on your design */
+  /* Component-specific dimensions */
+  --navbar-height: 80px;
   --page-header-height: 130px;
 }

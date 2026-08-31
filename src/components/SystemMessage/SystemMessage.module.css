@@ -12,45 +12,53 @@
 }
 
 .wrapper {
-  background: var(--color-primary-dark); /* dark green */
+  background: var(--color-bg);
   padding: var(--spacing-6xl) var(--spacing-xl);
   display: flex;
   justify-content: center;
 }
 
 .window {
-  background: #102421; /* dark card */
-  border: 2px solid var(--color-accent-dark); 
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
   width: 100%;
   max-width: 800px;
-  box-shadow: 4px 4px 0 var(--color-primary-dark);
-  font-family: var(--font-family-tahoma), monospace;
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-family-rubik), monospace;
   position: relative;
   animation: fadeInUp 1s ease-out;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
 }
 
 .header {
-  background: #183d3d;
-  color: #e8f6f3;
+  background: var(--color-primary-extra-dark);
+  color: var(--color-accent-neon);
   font-size: 1.5rem;
   padding: var(--spacing-sm) var(--spacing-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .close {
   background: transparent;
   border: none;
-  color: #e8f6f3;
+  color: var(--color-text-muted);
   font-size: 1.2rem;
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: var(--color-accent-neon);
 }
 
 .body {
   padding: var(--spacing-xl);
-  color: #e8f6f3;
+  color: var(--color-text-muted);
   font-size: 1.1rem;
 }
 
@@ -62,15 +70,18 @@
 
 .ok {
   padding: var(--spacing-sm) var(--spacing-lg);
-  font-family: var(--font-family-tahoma);
-  border: 2px solid #1dd1a1;
-  background: #1dd1a1;
-  color: #102421;
+  font-family: var(--font-family-rubik);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--border-radius-circle);
+  background: var(--gradient-primary);
+  color: var(--color-text-dark);
   cursor: pointer;
-  box-shadow: 2px 2px 0 var(--color-primary-dark);
+  box-shadow: var(--shadow-glow-neon);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ok:hover {
-  background: #13b089;
-  border-color: #13b089;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }

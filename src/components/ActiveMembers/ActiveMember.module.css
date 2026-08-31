@@ -1,44 +1,45 @@
 @import url('../../styles/variables.css');
 
-/* This file now matches class names in ActiveMember.tsx:
-   .memberCard, .imageWrapper, .photo, .overlay, .name
-*/
-
-/* FIXED: width is responsive, capped by max-width */
 .memberCard {
   width: 100%;
   max-width: 180px;
   text-align: center;
   font-family: var(--font-family-rubik);
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.memberCard:hover { transform: translateY(-4px); }
+.memberCard:hover { transform: translateY(-6px); }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease;
+}
+
+.memberCard:hover .imageWrapper {
+  box-shadow: var(--shadow-glow-neon);
 }
 
 .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 3px solid #f4f4f4;
-  border-radius: var(--border-radius-sm);
-  transition: transform 0.3s ease;
+  border-radius: var(--border-radius-md);
+  transition: transform 0.35s ease;
 }
 
-.imageWrapper:hover .photo { transform: scale(1.05); }
+.imageWrapper:hover .photo { transform: scale(1.06); }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: var(--color-primary-dark);
+  background: rgba(8, 23, 19, 0.82);
+  backdrop-filter: blur(4px);
+  color: var(--color-text-light);
   font-weight: 500;
   font-size: 14px;
   display: flex;
@@ -46,32 +47,31 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
   padding: 10px;
   text-align: center;
   line-height: 1.5;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
 }
 
 .imageWrapper:hover .overlay { opacity: 1; }
 
 .name {
-  margin-top: var(--spacing-xs);
-  color: var(--color-accent-medium);
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-light);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   display: inline-block;
   transition: color 0.2s ease;
 }
 
-.name:hover { color: var(--color-accent-light); }
+.name:hover { color: var(--color-accent-neon); }
 
-/* Mobile tweaks */
 @media (max-width: 768px) {
-  .memberCard { max-width: 160px; } /* FIXED: shrink cap */
+  .memberCard { max-width: 160px; }
 }
 
 @media (max-width: 480px) {
-  .memberCard { max-width: 150px; } /* FIXED: shrink cap */
+  .memberCard { max-width: 150px; }
   .name { font-size: 13px; }
 }

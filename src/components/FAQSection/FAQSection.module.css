@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: var(--spacing-6xl);;
-    background-color: var(--color-accent-light);
+    background-color: var(--color-bg);
     min-height: 100%;
 }
 
@@ -22,20 +22,22 @@
 }
 
 .faqBox {
-    background-color: #5F966E66;
-    border-radius:  var(--border-radius-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius:  var(--border-radius-lg);
     margin-bottom: var(--spacing-md);
     font-family: var(--font-family-rubik);
-    box-shadow: 0 3px 10px -2px var(--color-shadow);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
     padding: var(--spacing-md) var(--spacing-xl);
-    color: var(--color-primary-dark);
-    transition: background 0.3s ease, color 0.3s ease;
+    color: var(--color-text-light);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .openBox {
-    background-color: var(--color-primary-dark);
-    color: var(--color-accent-light);
+    background-color: var(--color-surface-hi);
+    color: var(--color-accent-neon);
+    box-shadow: var(--shadow-glow-neon);
 }
 
 .questionToggle {
