@@ -19,7 +19,7 @@ const RushSection: React.FC = () => {
           Interest Form
         </a>
         <a
-          href="https://forms.gle/7KcbzbsBeuSbEXMv5"
+          href="https://forms.gle/LTB98ndcCRweUSAT8"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.applicationButton}

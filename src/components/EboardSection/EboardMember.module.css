@@ -2,55 +2,54 @@
 
 .polaroid {
   width: 100%;
-  max-width: 200px; /* cap so rows look neat on desktop */
-  background-color: var(--color-primary-light);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-sm);
+  max-width: 200px;
   font-family: var(--font-family-rubik);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
-/* Mobile: ensure consistent sizing */
 @media (max-width: 768px) {
   .polaroid {
     width: 100%;
-    max-width: 180px; /* consistent mobile size */
-    min-width: 160px; /* prevent too small cards */
+    max-width: 180px;
+    min-width: 160px;
   }
 }
 
-.polaroid:hover { transform: translateY(-4px); }
+.polaroid:hover { transform: translateY(-6px); }
 
-/* Guarantee height for the photo on small screens */
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;  /* portrait box prevents collapse */
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease;
+}
+
+.polaroid:hover .imageWrapper {
+  box-shadow: var(--shadow-glow-neon);
 }
 
 .photo {
-  display: block;       /* eliminate inline-image baseline gap */
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 3px solid #f4f4f4;
-  border-radius: var(--border-radius-sm);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: var(--border-radius-md);
+  transition: transform 0.35s ease, opacity 0.3s ease;
 }
 
-.imageWrapper:hover .photo { transform: scale(1.03); }
+.imageWrapper:hover .photo { transform: scale(1.06); }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.88);
-  color: var(--color-primary-dark);
+  background: rgba(8, 23, 19, 0.82);
+  backdrop-filter: blur(4px);
+  color: var(--color-text-light);
   font-weight: 500;
   font-size: 14px;
   display: flex;
@@ -58,18 +57,20 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
   padding: 10px;
   text-align: center;
   line-height: 1.5;
-  border-radius: var(--border-radius-sm);
-  pointer-events: none; /* don’t block taps */
+  border-radius: var(--border-radius-md);
+  pointer-events: none;
 }
+
+.overlay strong { color: var(--color-accent-neon); }
 
 .imageWrapper:hover .overlay { opacity: 1; }
 
 .caption {
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
   padding: var(--spacing-xs) 0;
   display: flex;
   flex-direction: column;
@@ -80,14 +81,14 @@
 .caption h3 {
   font-size: 16px;
   font-weight: var(--font-weight-semibold);
-  color: #ffffff;
+  color: var(--color-text-light);
   margin-bottom: 2px;
 }
 
 .position {
   font-size: 13px;
   font-weight: var(--font-weight-regular);
-  color: #d6d6d6;
+  color: var(--color-text-muted);
   margin: 0;
   line-height: 1.2;
 }
@@ -105,9 +106,8 @@
   transition: color 0.2s ease;
 }
 
-.icon:hover { color: var(--color-accent-dark); }
+.icon:hover { color: var(--color-accent-neon); }
 
-/* Tiny phones */
 @media (max-width: 480px) {
   .caption h3 { font-size: 14px; }
   .position { font-size: 12px; }
