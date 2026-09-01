@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./RushTimeline.module.css";
+import { buildGoogleCalendarUrl } from "../../utils/calendar";
+import { parseLocation, REGISTRAR_LOCATIONS_URL } from "../../utils/locations";
 
 interface RushEvent {
   title: string;
   date: string; // ISO format: YYYY-MM-DD
   location?: string;
-  time?: string;
+  time?: string; // display text
+  startTime?: string; // 24-hour "HH:MM" — powers the calendar link
+  endTime?: string; // 24-hour "HH:MM"
 }
 
 const events: RushEvent[] = [
@@ -13,30 +17,39 @@ const events: RushEvent[] = [
     title: "Info Session #1",
     date: "2026-09-03",
     time: "6–8 PM",
+    startTime: "18:00",
+    endTime: "20:00",
     location: "NUB 1528",
   },
   {
     title: "Info Session #2",
     date: "2026-09-08",
     time: "6–8 PM",
+    startTime: "18:00",
+    endTime: "20:00",
     location: "NUB 2548",
   },
   {
     title: "Lemonade Stand",
     date: "2026-09-09",
     time: "6–8 PM",
+    startTime: "18:00",
+    endTime: "20:00",
     location: "The Cube",
   },
   {
     title: "DEI Panel",
     date: "2026-09-11",
     time: "5–7 PM ",
+    startTime: "17:00",
+    endTime: "19:00",
     location: "AH G115",
   },
   {
     title: "Application Due",
     date: "2026-09-12",
     time: "11:59 PM",
+    // no startTime → all-day calendar entry
   },
 ];
 
@@ -47,6 +60,29 @@ function formatEventDate(isoDate: string): string {
     day: "numeric",
   });
 }
+
+// Links a recognized building abbreviation (e.g. "NUB" in "NUB 1528") to the
+// Registrar's location reference; renders the raw string otherwise.
+const EventLocation: React.FC<{ location: string }> = ({ location }) => {
+  const parsed = parseLocation(location);
+  if (!parsed) {
+    return <span className={styles.metaText}>{location}</span>;
+  }
+  return (
+    <span className={styles.metaText}>
+      <a
+        href={REGISTRAR_LOCATIONS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={parsed.buildingName}
+        className={styles.metaLink}
+      >
+        {parsed.abbrev}
+      </a>
+      {parsed.rest ? ` ${parsed.rest}` : ""}
+    </span>
+  );
+};
 
 const RushTimeline: React.FC = () => {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -159,7 +195,7 @@ const RushTimeline: React.FC = () => {
                         strokeWidth="2"
                       />
                     </svg>
-                    <span className={styles.metaText}>{event.location}</span>
+                    <EventLocation location={event.location} />
                   </div>
                 )}
 
@@ -187,6 +223,52 @@ const RushTimeline: React.FC = () => {
                     <span className={styles.metaText}>{event.time}</span>
                   </div>
                 )}
+
+                {/* Add to calendar */}
+                <a
+                  className={`${styles.metaRow} ${styles.calendarLink}`}
+                  href={buildGoogleCalendarUrl(event)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg className={styles.metaIcon} viewBox="0 0 24 24">
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="3"
+                      y1="10"
+                      x2="21"
+                      y2="10"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="12"
+                      y1="13"
+                      x2="12"
+                      y2="19"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="9"
+                      y1="16"
+                      x2="15"
+                      y2="16"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                  <span className={styles.metaText}>Add to Google Calendar</span>
+                </a>
               </div>
             </div>
           </div>
