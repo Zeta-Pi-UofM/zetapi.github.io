@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./RushSection.module.css";
 import RushTimeline from "./RushTimeline.tsx";
 
+const RUSH_VIDEO_ID = "4SzZx5DZTEc";
+
 const RushSection: React.FC = () => {
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
   return (
     <div className={styles.container} style={{ fontFamily: "inherit" }}>
       <h1 className={styles.title}>RUSH</h1>
@@ -41,13 +45,33 @@ const RushSection: React.FC = () => {
           </p>
         </div>
         <div className={styles.video}>
-          <iframe
-            className={styles.videoFrame}
-            src="https://www.youtube.com/embed/4SzZx5DZTEc?autoplay=0&controls=0&rel=0&modestbranding=1&iv_load_policy=3"
-            title="Zeta Pi Rush Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+          <div className={styles.videoFrame}>
+            {videoPlaying ? (
+              <iframe
+                className={styles.videoEmbed}
+                src={`https://www.youtube-nocookie.com/embed/${RUSH_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&color=white`}
+                title="Zeta Pi Rush Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                type="button"
+                className={styles.videoPoster}
+                onClick={() => setVideoPlaying(true)}
+                aria-label="Play Zeta Pi Rush video"
+                style={{
+                  backgroundImage: `url(https://i.ytimg.com/vi_webp/${RUSH_VIDEO_ID}/maxresdefault.webp), url(https://i.ytimg.com/vi/${RUSH_VIDEO_ID}/hqdefault.jpg)`,
+                }}
+              >
+                <span className={styles.playButton} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="34" height="34">
+                    <path d="M8 5v14l11-7z" fill="currentColor" />
+                  </svg>
+                </span>
+              </button>
+            )}
+          </div>
           <div className={styles.videoCredit}>
             Video by{" "}
             <a
