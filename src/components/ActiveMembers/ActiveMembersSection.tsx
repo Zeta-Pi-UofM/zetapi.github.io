@@ -7,6 +7,7 @@ const ActiveMembersSection: React.FC = () => {
     const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
         const target = e.target as HTMLImageElement;
         target.src = DEFAULT_IMG;
+        target.classList.add(styles.fallback);
         target.onerror = null;
     };
 

@@ -70,6 +70,17 @@
   transform: scale(1.06);
 }
 
+/* Logo fallback: show the whole mark instead of a cropped close-up */
+.image.fallback {
+  object-fit: contain;
+  padding: 22%;
+  background: var(--color-background-dark, #0a1f19);
+}
+
+.imageWrapper:hover .image.fallback {
+  transform: none;
+}
+
 .overlay {
   position: absolute;
   top: 0;
