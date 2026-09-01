@@ -43,7 +43,7 @@ const RushSection: React.FC = () => {
         <div className={styles.video}>
           <iframe
             className={styles.videoFrame}
-            src="https://www.youtube.com/embed/FBtxYrTH6ro?autoplay=0&controls=0&rel=0&modestbranding=1&iv_load_policy=3"
+            src="https://www.youtube.com/embed/4SzZx5DZTEc?autoplay=0&controls=0&rel=0&modestbranding=1&iv_load_policy=3"
             title="Zeta Pi Rush Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
